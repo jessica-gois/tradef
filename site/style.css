@@ -1,3 +1,7 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .nav-color-background{
     background-color: #2087ED;
 }
@@ -9,13 +13,16 @@
     object-position: 0 5%;
     height: 600px;
 }
-.fonte-titulo{
-    font-family: 'Montserrat', sans-serif;
+
+.fonte-azul{
     color: #093364;
 }
 
+.fonte-bold{
+    font-weight: bold;
+}
+
 .fonte-titulo-branco{
-    font-family: 'Montserrat', sans-serif;
     color:white;
     font-weight: bold;
 }
@@ -28,13 +35,11 @@
     font-size: 24px;
 }
 .fonte-paragrafo{
-font-family: 'Montserrat', sans-serif;
 font-size: 16px;
 color: #093364;
 }
 
 .fonte-termo-aceite{
-    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     color: white;
  }
