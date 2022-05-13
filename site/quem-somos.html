@@ -67,27 +67,46 @@
     <section class="container-fluid" id="newsletter">    
       <div class="row justify-content-center background-newsletter p-5 ">  
         <h2 class="fonte-titulo-branco">Assine nossa newsletter</h2>
-      <form class="row gy-2 gx-3 align-items-center">
+      <form class="row gy-2 gx-3 align-items-center needs-validation" novalidate>
         <div class="col-4">
           <label class="visually-hidden" for="autoSizingInput">Nome</label>
-          <input type="text" class="form-control" id="autoSizingInput" placeholder="Seu nome">
+          <input type="text" class="form-control" id="autoSizingInput" placeholder="Seu nome" required>
+          <div class="invalid-feedback">
+            Obrigatório
+          </div>
+          <div class="valid-feedback">
+            Ok
+          </div>
         </div>
         <div class="col-4">
           <label class="visually-hidden" for="autoSizingInputGroup">E-mail</label>
           <div class="input-group">
             <div class="input-group-text">@</div>
-            <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="exemplo@gmail.com">
+            <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="exemplo@gmail.com" required>
+            <div class="invalid-feedback">
+              Obrigatório
+            </div>
+            <div class="valid-feedback">
+              Ok
+            </div>
           </div>
         </div>
         <div class="col-2">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+            <input class="form-check-input" type="checkbox" id="autoSizingCheck" required>
             <label class="form-check-label fonte-termo-aceite" for="autoSizingCheck">
               Li os termos de uso
             </label>
+
+            <div class="invalid-feedback">
+              Obrigatório
+            </div>
+            <div class="valid-feedback">
+              Ok
+            </div>
           </div>
         </div>
-        <div class="col-auto">
+        <div class="col-2">
           <button type="submit" class="btn botao-cor-especial">Cadastre-se</button>
         </div>     
       </form>
@@ -98,30 +117,68 @@
    <p class="text-light m-0 text-center"><a class="text-light" href="mailto:doacao@tradef.com.br">doacao@tradef.com.br</a></p>
  </footer>
 <!-- Modal -->
-<div class="modal fade" id="modal-contato" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <header class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Formulário de contato</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </header>
-      <main class="modal-body">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-      </main>
-      <footer class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn botao-cor-especial">Enviar</button>
-      </footer>
+<form class="needs-validation" novalidate>
+  <div class="modal fade" id="modal-contato" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <header class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Formulário de contato</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </header>
+        <main class="modal-body">
+          
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+            <div class="invalid-feedback">
+              Obrigatório
+            </div>
+            <div class="valid-feedback">
+              Ok
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+            <div class="invalid-feedback">
+              Obrigatório
+            </div>
+            <div class="valid-feedback">
+              Ok
+            </div>
+          </div>  
+        </main>
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn botao-cor-especial">Enviar</button>
+        </footer>
+      </div>
     </div>
   </div>
-</div>
+  </form>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 </html>
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
